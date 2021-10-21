@@ -35,7 +35,7 @@ public class UASPrakPBO {
         totalButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double tfJumlahBarang1=0, tfJumlahBarang2=0, tfJumlahBarang3=0, tfByr=0 ,varHargaBarang1=25000, varHargaBarang2=50000, varHargaBarang3=75, disk1Pers=0.01, hargaTot;
+                double tfJumlahBarang1=0, tfJumlahBarang2=0, tfJumlahBarang3=0, tfByr=0 ,varHargaBarang1=25000, varHargaBarang2=50000, varHargaBarang3=75, disk1Pers=0.01, hargadisk1Pers;
                 try{
                     tfJumlahBarang1 = Double.parseDouble(tfHargaBarang1.getText());
                     tfJumlahBarang2 = Double.parseDouble(tfHargaBarang2.getText());
@@ -48,17 +48,27 @@ public class UASPrakPBO {
                 if(tfJumlahBarang1>=50){
                     tfByr = varHargaBarang1 * tfJumlahBarang1 - disk1Pers;
                     disk1Pers = varHargaBarang1 * disk1Pers;
-                    tfHargaBarang1.setText(String.valueOf(tfByr));
+                    tfTH1.setText(String.valueOf(tfByr));
                     tfHBD1.setText(String.valueOf(disk1Pers));
                 }
                 else {
                     tfByr = varHargaBarang1 * tfJumlahBarang1;
-                    tfHargaBarang1.setText(String.valueOf(tfByr));
+                    tfTH1.setText(String.valueOf(tfByr));
                 }
                 if (tfJumlahBarang2>=50){
-                    hargaTot = varHargaBarang2 * tfJumlahBarang2 - disk1Pers;
-                    disk1Pers = varHargaBarang2 * disk1Pers;
+                    tfByr = varHargaBarang2 * tfJumlahBarang2 - disk1Pers;
+                    hargadisk1Pers = varHargaBarang2 * disk1Pers;
+                    tfTH2.setText(String.valueOf(tfByr));
+                    tfHBD2.setText(String.valueOf(hargadisk1Pers));
                 }
+                else {
+                    tfByr = varHargaBarang2 * tfJumlahBarang2;
+                    tfTH2.setText(String.valueOf(tfByr));
+                }
+                if (tfJumlahBarang3 >= 50){
+                    
+                }
+
                 double totHarga1, totHarga2, totHarga3, totPembayaran, totDisk5Pers = 0, disk5Pers = 0.05, hasil;
                 totHarga1 = Double.parseDouble(tfTH1.getText());
                 totHarga2 = Double.parseDouble(tfTH2.getText());
